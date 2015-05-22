@@ -105,18 +105,28 @@ public class ShortcutHelp {
 		}
 	}
 
-	  /**
-	   * 删除程序的快捷方式      
-	   * @param title 要删除的快捷键的名字
-	   * @param intent 快捷键cursor中的intent
-	   */
-    private void delShortcut(String title, String intent){
+	/**
+	 * 删除程序的快捷方式
+	 * 
+	 * @param title
+	 *            要删除的快捷键的名字
+	 * @param intent
+	 *            快捷键cursor中的intent，如果是删除本应用的快捷方式，此参数可以为""或者null
+	 */
+	public void delShortcut(String title, String intent){
         Intent shortcut = new Intent("com.android.launcher.action.UNINSTALL_SHORTCUT");
         //快捷方式的名称
         shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, title);
-        String pkg = intent.split("component=")[1].split("/")[0];
-        String cls = pkg + intent.split("component=")[1].split("/")[1].split(";")[0];
-        ComponentName comp = new ComponentName(pkg, cls);
+        String d_pkg = "";
+        String d_cls = "";
+        ComponentName comp = null;
+		if (intent != null && !"".equals(intent)) {
+			d_pkg = intent.split("component=")[1].split("/")[0];
+			d_cls = pkg + intent.split("component=")[1].split("/")[1].split(";")[0];
+			comp = new ComponentName(d_pkg, d_cls);
+		} else {
+			comp = new ComponentName(pkg, cls);
+		}
         shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent(Intent.ACTION_MAIN).setComponent(comp));
         context.sendBroadcast(shortcut);
     }

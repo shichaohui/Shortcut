@@ -15,22 +15,58 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <Button
-        android:id="@+id/shortcut1"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="生成快捷方式1" />
+        android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/shortcut2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="生成快捷方式2" />
+        <Button
+            android:id="@+id/shortcut1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生成快捷方式1" />
 
-    <Button
-        android:id="@+id/shortcut3"
-        android:layout_width="match_parent"
+        <Button
+            android:id="@+id/shortcut1_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除快捷方式1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="生成快捷方式3" />
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/shortcut2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生成快捷方式2" />
+
+        <Button
+            android:id="@+id/shortcut2_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除快捷方式2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/shortcut3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生成快捷方式3" />
+
+        <Button
+            android:id="@+id/shortcut3_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除快捷方式3" />
+    </LinearLayout>
 
 </LinearLayout>

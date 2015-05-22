@@ -53,8 +53,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		
 		findViewById(R.id.shortcut1).setOnClickListener(this);
+		findViewById(R.id.shortcut1_del).setOnClickListener(this);
 		findViewById(R.id.shortcut2).setOnClickListener(this);
+		findViewById(R.id.shortcut2_del).setOnClickListener(this);
 		findViewById(R.id.shortcut3).setOnClickListener(this);
+		findViewById(R.id.shortcut3_del).setOnClickListener(this);
 		
 	}
 
@@ -64,11 +67,20 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.shortcut1:
 			new ShortcutHelp(this).createShortCut("快捷1", BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
 			break;
+		case R.id.shortcut1_del:
+			new ShortcutHelp(this).delShortcut("快捷1", "");
+			break;
 		case R.id.shortcut2:
 			new ShortcutHelp(this).createShortCut("快捷2", BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
 			break;
+		case R.id.shortcut2_del:
+			new ShortcutHelp(this).delShortcut("快捷2", "");
+			break;
 		case R.id.shortcut3:
 			new ShortcutHelp(this).createShortCut("快捷3", BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+			break;
+		case R.id.shortcut3_del:
+			new ShortcutHelp(this).delShortcut("快捷3", "");
 			break;
 		}
 		
